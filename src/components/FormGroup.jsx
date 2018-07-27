@@ -7,7 +7,8 @@ function FormGroup(props) {
         <h2>{props.name}</h2>
         {Object.values(props.options).map(option => (
           <div key={option}>
-            <input name={props.name} type="radio" id={option} />
+            <input onChange={props.handler} name={props.name} type="checkbox" id={option} />
+
             <label htmlFor={option} className="form-label">
               {option}
             </label>
