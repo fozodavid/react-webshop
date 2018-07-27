@@ -20,7 +20,7 @@ class WebShop extends Component {
 
   render() {
     return (
-      <div class='row'>
+      <div className='row'>
         <Filters filterSettings={this.state.filters} />
         <Products />
       </div>

@@ -3,7 +3,7 @@ import './Products.css';
 
 function Products(props) {
   return (
-    <div className='col col-md-10 products'>
+    <div className='col col-md-9 products'>
       <p>Products</p>
     </div>
   );
