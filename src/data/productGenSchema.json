@@ -1,0 +1,24 @@
+[
+  {
+    "repeat(100)": {
+      _id: '{{objectId()}}',
+      index: '{{index()}}',
+      guid: '{{guid()}}',
+      price: '£{{integer(20, 1500, 0, "0,0")}}.00',
+      picture: 'http://placehold.it/32x32',
+      color: "{{random('blue', 'brown', 'green','black','white','red')}}",
+		  category: "{{random('mobile','laptop','desktop','ultrabook','monitor','keyboard')}}",
+      brand: "{{random('Asus','hp','Dell','Apple','Acer','Lenovo')}}",
+      line: "{{random('XPS','XXC','EVO','Ultra','X','R')}}",
+      model: "{{integer(0,1500)}}",
+      name() { return `${this.brand} ${this.line} ${this.model}` },
+      about: '{{lorem(1, "paragraphs")}}',
+      registered: '{{moment(this.date(new Date(2014, 0, 1), new Date())).format("LLLL")}}',
+      tags: [
+        {
+          'repeat(5)': '{{lorem(1, "words")}}'
+        }
+      ]
+    }
+  }
+]
