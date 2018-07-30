@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import Products from "./Products";
 import Filters from "./Filters";
 
+
 class WebShop extends Component {
   constructor(props) {
     super(props);
     this.state = {
       filters: {
-        category: [],
+        category: 'mobile',
         brands: [],
         colors: [],
         price: {
@@ -16,8 +17,17 @@ class WebShop extends Component {
         },
       }
     };
-
     this.setFilters = this.setFilters.bind(this);
+    this.categoryHandler = this.categoryHandler.bind(this);
+  }
+
+  categoryHandler(e) {
+    this.setState({
+      filters: {
+        ...this.state.filters,
+        category: e.target.value
+      }
+    })
   }
 
   setFilters(e) {
@@ -40,13 +50,16 @@ class WebShop extends Component {
         ]
       }
     })
-
   };
 
   render() {
     return (
       <div className='row'>
-        <Filters filterSettings={this.state.filters} handler={this.setFilters} />
+        <Filters 
+          filterSettings={this.state.filters} 
+          handler={this.setFilters} 
+          categoryHandler={this.categoryHandler}
+        />
         <Products data={this.props.data} filters={this.state.filters} />
       </div>
     );

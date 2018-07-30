@@ -4,4 +4,8 @@
 
 .product {
   background: lightblue;
+  width: 30%;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  display: inline-block;
 }
