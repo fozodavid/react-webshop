@@ -1,14 +1,13 @@
-import React from 'react';
-import './Product.css';
+import React from "react";
+import "./Product.css";
 
 function Product(props) {
-
   return (
-    <article className='product col col-md-3'>
-      <img src={props.picture} />
+    <article className="product col col-md-3">
+      <img src={props.picture} alt="product" />
       <p>
         {props.name}
-        <span style={{color: props.color}}>⏺</span>
+        <span style={{ color: props.color }}>⏺</span>
       </p>
       <p className="price">{props.price}</p>
     </article>

@@ -1,7 +1,7 @@
 import React from "react";
-import './FormGroup.css';
+import './CheckBox.css';
 
-function FormGroup(props) {
+function CheckBox(props) {
   if (props.options) {
     return (
       <div className="form-group">
@@ -23,4 +23,4 @@ function FormGroup(props) {
   )
 }
 
-export default FormGroup;
+export default CheckBox;
