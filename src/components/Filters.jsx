@@ -11,7 +11,6 @@ function Filters(props) {
         <CategoryFilter name='category' options={categories} handler={props.categoryHandler} />
         <FormGroup name='brands' options={brands} handler={props.handler} />
         <FormGroup name='colors' options={colors} handler={props.handler} />
-        <FormGroup name='price' />
         <button
           type='button'
           className='btn btn-primary'

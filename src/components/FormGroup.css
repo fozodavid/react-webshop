@@ -1,0 +1,14 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox input[type="checkbox"] + label {
+  color: #909090;
+  cursor: pointer;
+}
+
+.checkbox input[type=checkbox]:checked + label {
+  color: black;
+  font-style: bold;
+}
+
