@@ -7,7 +7,6 @@ function FormGroup(props) {
       <div className="form-group">
         <h2>{props.name}</h2>
         {Object.values(props.options).map(option => {
-        console.log(option);
         return (
           <div key={option} className="checkbox">
             <input onChange={props.handler} name={props.name} type="checkbox" id={option} />

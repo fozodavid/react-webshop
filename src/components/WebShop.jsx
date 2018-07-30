@@ -11,14 +11,25 @@ class WebShop extends Component {
         category: 'mobile',
         brands: [],
         colors: [],
-        price: {
-          from: 0,
-          to: 1500
-        },
+      },
+      display: {
+        category: 'mobile',
+        brands: [],
+        colors: [],
       }
     };
+    this.displayHandler = this.displayHandler.bind(this);
     this.setFilters = this.setFilters.bind(this);
     this.categoryHandler = this.categoryHandler.bind(this);
+  }
+
+  displayHandler() {
+    this.setState({
+      ...this.state,
+      display: {
+        ...this.state.filters
+      }
+    })
   }
 
   categoryHandler(e) {
@@ -57,10 +68,11 @@ class WebShop extends Component {
       <div className='row'>
         <Filters 
           filterSettings={this.state.filters} 
-          handler={this.setFilters} 
+          checkboxHandler={this.setFilters} 
           categoryHandler={this.categoryHandler}
+          displayHandler={this.displayHandler}
         />
-        <Products data={this.props.data} filters={this.state.filters} />
+        <Products data={this.props.data} display={this.state.display} />
       </div>
     );
   }

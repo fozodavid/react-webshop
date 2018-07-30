@@ -1,0 +1,24 @@
+.product {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.product img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.35;
+  margin-bottom: 0.5em;
+}
+
+.product p {
+  margin-bottom: 0
+}
+
+.price {
+  color: #909090;
+}
+
+.product span {
+  position: absolute;
+  right: 0.8em;
+}
