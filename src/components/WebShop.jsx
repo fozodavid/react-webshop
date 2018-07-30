@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Products from "./Products";
 import Filters from "./Filters";
+import { categories } from "../constants";
 
 
 class WebShop extends Component {
@@ -8,25 +9,27 @@ class WebShop extends Component {
     super(props);
     this.state = {
       filters: {
-        category: 'mobile',
+        category: categories.MOBILE,
         brands: [],
         colors: [],
       },
-      display: {
-        category: 'mobile',
+      onDisplay: {
+        category: categories.MOBILE,
         brands: [],
         colors: [],
       }
     };
-    this.displayHandler = this.displayHandler.bind(this);
-    this.setFilters = this.setFilters.bind(this);
+    this.updateDisplay = this.updateDisplay.bind(this);
+    this.checkboxHandler = this.checkboxHandler.bind(this);
     this.categoryHandler = this.categoryHandler.bind(this);
+    this.addToFilters = this.addToFilters.bind(this);
+    this.removeFromFilters = this.removeFromFilters.bind(this);
   }
 
-  displayHandler() {
+  updateDisplay() {
     this.setState({
       ...this.state,
-      display: {
+      onDisplay: {
         ...this.state.filters
       }
     })
@@ -41,38 +44,45 @@ class WebShop extends Component {
     })
   }
 
-  setFilters(e) {
-    if (e.target.checked) {
-      return this.setState({
-        filters: {
-          ...this.state.filters,
-          [e.target.name]: [
-            ...this.state.filters[e.target.name],
-            e.target.id
-          ]
-        }
-      })
-    }
+  addToFilters(group, id) {
     this.setState({
       filters: {
         ...this.state.filters,
-        [e.target.name]: [
-          ...this.state.filters[e.target.name].filter(item => item !== e.target.id)
+        [group]: [
+          ...this.state.filters[group],
+          id
         ]
       }
     })
+  }
+
+  removeFromFilters(group, id) {
+    this.setState({
+      filters: {
+        ...this.state.filters,
+        [group]: [
+          ...this.state.filters[group].filter(item => item !== id)
+        ]
+      }
+    })
+  }
+
+  checkboxHandler(e) {
+    if (e.target.checked) {
+      return this.addToFilters(e.target.name, e.target.id)
+    }
+    this.removeFromFilters(e.target.name, e.target.id);
   };
 
   render() {
     return (
       <div className='row'>
         <Filters 
-          filterSettings={this.state.filters} 
-          checkboxHandler={this.setFilters} 
+          checkboxHandler={this.checkboxHandler} 
           categoryHandler={this.categoryHandler}
-          displayHandler={this.displayHandler}
+          updateDisplay={this.updateDisplay}
         />
-        <Products data={this.props.data} display={this.state.display} />
+        <Products data={this.props.data} onDisplay={this.state.onDisplay} />
       </div>
     );
   }

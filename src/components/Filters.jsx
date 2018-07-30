@@ -11,7 +11,7 @@ function Filters(props) {
         <CategoryFilter name='category' options={categories} handler={props.categoryHandler} />
         <FormGroup name='brands' options={brands} handler={props.checkboxHandler} />
         <FormGroup name='colors' options={colors} handler={props.checkboxHandler} />
-        <button type='button' className='btn' onClick={props.displayHandler}>
+        <button type='button' className='btn' onClick={props.updateDisplay}>
           Filter
         </button>
       </form>

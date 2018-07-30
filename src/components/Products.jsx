@@ -1,38 +1,18 @@
-import React from 'react';
-import Product from './Product';
-import './Products.css';
+import React from "react";
+import Product from "./Product";
+import filterProducts from "../utils";
+import "./Products.css";
 
 function Products(props) {
-  const { display } = props;
-  return (
-    <div className='col col-md-9 products'>
-      {props.data
-        .filter(item => display.category.includes(item.category))
-        .filter(item => {
-          if(display.brands.length === 0) {
-            return true;
-          }
-          return (
-            display.brands.includes(item.brand)
-          );
-        })
-        .filter(item => {
-          if(display.colors.length === 0) {
-            return true;
-          }
-          return (
-            display.colors.includes(item.color)
-          );
-        })
-        .sort((a,b) => {
-          return (
-            a.price.substring(1)-b.price.substring(1)
-          )
-        })
-        .map(item => <Product key={item.guid} {...item} />)
-      }
-    </div>
-  );
+  const itemsOnDisplay = filterProducts(props.data, props.onDisplay);
+  if (itemsOnDisplay.length > 0) {
+    return (
+      <div className="col col-md-9 products">
+        {itemsOnDisplay.map(item => <Product key={item.guid} {...item} />)}
+      </div>
+    );
+  }
+  return <p className="error">Sorry, no products matched your selection.</p>;
 }
 
 export default Products;

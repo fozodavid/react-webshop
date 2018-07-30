@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import data from './data/products.json';
-import WebShop from './components/WebShop';
-import './App.css';
+import React, { Component } from "react";
+import data from "./data/products.json";
+import WebShop from "./components/WebShop";
+import "./App.css";
 
 class App extends Component {
   render() {
