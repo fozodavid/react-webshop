@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Products from "./Products";
+import ProductsView from "./ProductsView";
 import Filters from "./Filters";
 import { categories } from "../constants";
 
@@ -82,7 +82,7 @@ class WebShop extends Component {
           categoryHandler={this.categoryHandler}
           updateDisplay={this.updateDisplay}
         />
-        <Products data={this.props.data} onDisplay={this.state.onDisplay} />
+        <ProductsView data={this.props.data} onDisplay={this.state.onDisplay} />
       </div>
     );
   }

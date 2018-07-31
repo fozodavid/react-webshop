@@ -1,9 +1,9 @@
 import React from "react";
-import Product from "./Product";
+import Product from "./ProductTile";
 import filterProducts from "../utils";
-import "./Products.css";
+import "./ProductsView.css";
 
-function Products(props) {
+function ProductsView(props) {
   const itemsOnDisplay = filterProducts(props.data, props.onDisplay);
   if (itemsOnDisplay.length > 0) {
     return (
@@ -15,4 +15,4 @@ function Products(props) {
   return <p className="error">Sorry, no products matched your selection.</p>;
 }
 
-export default Products;
+export default ProductsView;

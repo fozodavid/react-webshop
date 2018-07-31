@@ -1,7 +1,7 @@
 import React from "react";
-import "./Product.css";
+import "./ProductTile.css";
 
-function Product(props) {
+function ProductTile(props) {
   return (
     <article className="product col col-md-3">
       <img src={props.picture} alt="product" />
@@ -14,4 +14,4 @@ function Product(props) {
   );
 }
 
-export default Product;
+export default ProductTile;
