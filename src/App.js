@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>Webshop Engine</h1>
+          <h1>React Webshop App</h1>
         </header>
         <WebShop data={data} />
       </div>
