@@ -14,6 +14,9 @@ function CategoryFilter(props) {
       </div>
     )
   }
+  return (
+    <p>Loading</p>
+  );
 }
 
 export default CategoryFilter;

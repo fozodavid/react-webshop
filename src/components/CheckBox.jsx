@@ -19,7 +19,7 @@ function CheckBox(props) {
     );
   }
   return (
-    <p>Price</p>
+    <p>Loading</p>
   )
 }
 
