@@ -6,7 +6,7 @@ import { categories, colors, brands } from '../constants';
 function Filters(props) {
 
   return (
-    <div className='col col-md-3'>
+    <aside className='col col-md-3'>
       <form>
         <CategoryFilter name='category' options={categories} handler={props.categoryHandler} />
         <CheckBox name='brands' options={brands} handler={props.checkboxHandler} />
@@ -15,7 +15,7 @@ function Filters(props) {
           Filter
         </button>
       </form>
-    </div>
+    </aside>
   )
 }
 

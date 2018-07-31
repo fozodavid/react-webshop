@@ -7,7 +7,9 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Webshop Engine</h1>
+        <header>
+          <h1>Webshop Engine</h1>
+        </header>
         <WebShop data={data} />
       </div>
     );
