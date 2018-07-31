@@ -13,15 +13,18 @@ After adding the desired filters, you have to click on the `Filter` button to up
 
 ## Installation and Start
 
-clone the repo
+* clone the repo
+* npm install
+* npm start
 
-npm install
+## Possible Improvements
 
-npm start
+* Proptypes
+* Write Tests
+* Setup ESLint
 
 ## Misc
 
 `data/productGenSchema.json` is a schema to generate json at
 https://www.json-generator.com/
-
 
